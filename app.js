@@ -2,8 +2,8 @@
    暗房水印 · DARKROOM.WM  —  app.js
    纯前端 / 零依赖 / 全部 Canvas 本地处理,图片绝不离开浏览器。
 
-   渲染哲学：始终以\"原图自然分辨率\"绘制到 canvas,再用 CSS 缩放显示。
-   => 预览所见 === 导出所得（真·所见即所得）,且导出保持原始分辨率。
+   渲染哲学:始终以"原图自然分辨率"绘制到 canvas,再用 CSS 缩放显示。
+   => 预览所见 === 导出所得(真·所见即所得),且导出保持原始分辨率。
    ===================================================================== */
 (() => {
   "use strict";
@@ -75,7 +75,7 @@
     };
   }
 
-  // 在当前坐标系下,以 (ox,oy) 为中心绘制一枚\"水印戳\"
+  // 在当前坐标系下,以 (ox,oy) 为中心绘制一枚"水印戳"
   function paintStamp(c, m, ox, oy) {
     let y = oy - m.height / 2;
 
@@ -145,7 +145,7 @@
     c.restore();
   }
 
-  // 把某张图整体（底图 + 水印）画到指定 canvas
+  // 把某张图整体(底图 + 水印)画到指定 canvas
   function compose(targetCanvas, item, forJpeg) {
     targetCanvas.width = item.width;
     targetCanvas.height = item.height;
@@ -293,7 +293,7 @@
     const item = activeItem();
     if (!item) { toast("没有可导出的图片"); return; }
     await downloadItem(item);
-    toast("已冲洗：" + item.name);
+    toast("已冲洗:" + item.name);
   }
 
   async function exportAll() {
@@ -387,7 +387,7 @@
     $("jpegQualityVal").textContent = state.output.quality;
   }
 
-  // 通用绑定：控件变化 -> 更新 state -> 重绘 -> 记忆
+  // 通用绑定:控件变化 -> 更新 state -> 重绘 -> 记忆
   function bind(id, path, transform) {
     const el = $(id);
     const [grp, key] = path.split(".");
@@ -528,7 +528,7 @@
     });
   }
 
-  // 由锡点估算归一化坐标（用于方向键起步）
+  // 由锚点估算归一化坐标(用于方向键起步)
   function anchorPercent(a) {
     const mg = state.position.margin / 100;
     let x = 0.5, y = 0.5;
